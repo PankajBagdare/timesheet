@@ -1,18 +1,12 @@
-<% provide(:title, 'Sign Up') %>
-<h1>Login</h1>
-<div class="login">
-
-    <div><%= form_tag :action => :create do %>
-
-      <%= label_tag :user, 'Username: ' %><br>
-      <%= text_field_tag :user %><br>
-
-      <%= label_tag :password, 'Password: ' %><br>
-      <%= password_field_tag :password %><br>
-
-      <%= submit_tag 'Login' %>
-
-    <% end %>
- </div>
-     <p>New user? <%= link_to "Sign up now!", 'user/new' %></p>
+<div class="user">
+	<p id="name">
+	<%= @user.first_name %>
+	<%= @user.last_name %>
+	</p>
+	<% if @user.category == "admin" %>
+	<%= link_to "Add Members", user_add_member_path %><br>
+	<%= link_to "Create project", user_create_project_path %><br>
+	<% else %>
+	<%= link_to "Create project", user_create_project_path %>
+	<% end %>
 </div>

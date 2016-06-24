@@ -1,0 +1,27 @@
+<% provide(:title, 'Login') %>
+
+<div class="login" align="center">
+	&nbsp;	
+	<div class="box">
+		<h1>Login</h1>
+		&nbsp;
+		<div id="table">
+			<%= form_tag :action => :create do %>
+			<div id="row">
+      			<%= label_tag :user, 'Username: ' %></area>
+      			<%= text_field_tag :user %><br>
+      		</div>
+      
+      		<div id="row">
+      			<%= label_tag :password, 'Password: ' %></area>
+      			<%= password_field_tag :password %><br>
+      		</div>
+      
+    		<div id="row">
+      			<%= submit_tag 'Login' %>
+      		</div>
+    		<% end %>
+ 		</div><br>
+    	<p>New user? <%= link_to "Sign up now!", user_new_path %></p>
+	</div>
+</div>

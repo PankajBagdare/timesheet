@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="header">
+	<div style="padding-top:2px; padding-left:5px;"><h3>Home</h3></div>
+	&nbsp;<h1 align="center">Timesheet</h1>&nbsp;
+	<div id="login">
+		<% if current_user %>
+			Welcome! <%= current_user.first_name %> <%= current_user.last_name%>
+			<%= link_to "Log Out", session_path(current_user), method: "delete" %>
+		<% else  %>
+			<%= link_to "Login", new_session_path %>
+		<% end %>		
+	</div>
+</div>
 <%= yield %>
+
 
 </body>
 </html>

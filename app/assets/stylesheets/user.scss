@@ -1,3 +1,47 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+    color: mintcream;
+    background: cadetblue;
+    font-size: large;
+}
+
+.login {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div#row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.box {
+    height: auto;
+    width: 400px;
+    border: groove;
+    align-self: center;
+    align-items: center;
+}
+.user {
+    padding-left: 200px;
+    padding-top: 50px;
+    font-family: serif;
+    font-size: larger;
+}
+
+p#name {
+    font-size: x-large;
+    font-family: serif;
+    font-weight: bold;
+    color: darkcyan;
+}
+div#column1 {
+    float: left;
+    width: 100px;
+    padding-left: 20px;
+}
+div#column2 {
+    float: left;
+    padding-left: 20px;
+    width: 150px;
+}

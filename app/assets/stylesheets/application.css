@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.header {
+    color: mintcream;
+    background: cadetblue;
+    font-size: large;
+}
+div#login{
+    
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

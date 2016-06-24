@@ -1,22 +1,45 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+<div id="row"></div>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+<div class="signup" align="center">
+  <div class="box">
+  	<h1 align="center">Sign up</h1>
+  	&nbsp;
+    <%= form_for :user, url: user_create_path, method: :post do |f| %>
+      <div id="row">
+        <div id="column1"><%= f.label :first_name %></div>
+        <div id="column2"><%= f.text_field :first_name %></div><br>
+      <div>
+      <div id="row">
+        <div id="column1"><%= f.label :last_name %></div>
+        <div id="column2"><%= f.text_field :last_name %></div><br>
+      <div>
+      <div id="row">
+        <div id="column1"><%= f.label :user_name %></div>
+        <div id="column2"><%= f.text_field :user_name %></div><br>
+      </div>
+      <div id="row">
+        <div id="column1"><%= f.label :email %></div>
+        <div id="column2"><%= f.email_field :email %></div><br>
+      </div>
+      <div id="row">
+        <div id="column1"><%= f.label :password %></div>
+        <div id="column2"><%= f.password_field :password %></div><br>
+      </div>
+      <div id="row">
+        <div id="column1"><%= f.label :category %></div>
+        <div id="column2"><%= f.radio_button :category, 'admin' %>Admin 
+        	<%= f.radio_button :category, 'normal' %>Normal</div><br>      
+      </div>
+      <div id="row">
+        <div id="column1"><%= f.label :company %></div>
+        <div id="column2"><%= f.text_field :company%></div><br>
+      </div>
+      <div id="row">
+        <%= f.submit "Create my account", class: "btn btn-primary" %>
+      </div>
+      
     <% end %>
   </div>
 </div>
