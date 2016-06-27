@@ -11,17 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622134606) do
+ActiveRecord::Schema.define(version: 20160627132337) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name",           limit: 255
     t.text     "description",    limit: 65535
     t.date     "start_date"
-    t.string   "project_status", limit: 255
+    t.string   "project_status", limit: 255,   default: "beginning"
     t.date     "end_date"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
+
+  create_table "projects_users", id: false, force: :cascade do |t|
+    t.integer "project_id", limit: 4, null: false
+    t.integer "user_id",    limit: 4, null: false
+  end
+
+  add_index "projects_users", ["project_id", "user_id"], name: "index_projects_users_on_project_id_and_user_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -47,14 +54,6 @@ ActiveRecord::Schema.define(version: 20160622134606) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "users_projects", force: :cascade do |t|
-    t.integer "user_id",    limit: 4
-    t.integer "project_id", limit: 4
-  end
-
-  add_index "users_projects", ["project_id"], name: "fk_rails_45dda264fd", using: :btree
-  add_index "users_projects", ["user_id"], name: "fk_rails_8ed741bcea", using: :btree
-
   create_table "working_times", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "project_id", limit: 4
@@ -72,8 +71,6 @@ ActiveRecord::Schema.define(version: 20160622134606) do
 
   add_foreign_key "tasks", "projects"
   add_foreign_key "tasks", "users"
-  add_foreign_key "users_projects", "projects"
-  add_foreign_key "users_projects", "users"
   add_foreign_key "working_times", "projects"
   add_foreign_key "working_times", "users"
 end

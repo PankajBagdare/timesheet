@@ -11,7 +11,15 @@
 	<% end %>
 	<div id="flash"><%= flash[:notice] %></div>
 
-<div id="projects">
-	Projects :-
-</div>
+	<div id="projects">
+		Projects :-
+		<p>
+			<% if @user.projects %>
+					<%= for_each @user.projects do |project|%>
+					<%= project.name %><br>
+					<%= project.description %>
+					<% end %>
+			<% end %>
+		</p>
+	</div>
 </div>
