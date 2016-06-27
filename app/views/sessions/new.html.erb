@@ -21,6 +21,7 @@
       			<%= submit_tag 'Login' %>
       		</div>
     		<% end %>
+        <p id="notice"><%= flash[:notice] %></p>
  		</div><br>
     	<p>New user? <%= link_to "Sign up now!", user_new_path %></p>
 	</div>

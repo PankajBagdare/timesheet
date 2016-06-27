@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
   end
+  
   def index
   end
 
@@ -8,10 +9,11 @@ class SessionsController < ApplicationController
   	@user = User.find_by_user_name(params[:user])
   	if @user && @user.authenticate(params[:password])
   		session[:user_id] = @user.id
-  		redirect_to '/user/:id', notice: 'Logged in!'
+      flash[:notice] = 'Successfully Logged in'
+  		redirect_to '/user/:id', notice: 'Successfully Logged in!'
   	else
-  		flash.now.alert = 'Username or password is incorrect'
-  		redirect_to '/sessions/new'
+      flash[:notice] = 'Username or password is incorrect'
+  		redirect_to '/sessions/new', notice: 'Username or password is incorrect'
   	end
   end
 

@@ -1,0 +1,16 @@
+<div id="create_project">
+	<div id="box" align="center">
+		<div>
+			<%= form_for :projects, :action => :create do |f| %>	
+				<div id="row"><%= f.label :project_name %></div>
+				<div id="row"><%= f.text_field :project_name %></div>
+				<div id="row"><%= f.label :description %></div>
+				<div id="row"><%= f.text_area :description %></div>
+				<div id="row"><%= f.label :start_date %></div>
+				<div id="row"><%= f.text_field :start_date, class: 'datepicker' %>
+				</div>
+				<div><%= f.submit :submit %></div>
+			<% end %>
+		</div>
+	</div>
+</div>

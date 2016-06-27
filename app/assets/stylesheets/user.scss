@@ -23,7 +23,7 @@ div#row {
     align-items: center;
 }
 .user {
-    padding-left: 200px;
+    padding-left: 150px;
     padding-top: 50px;
     font-family: serif;
     font-size: larger;
@@ -44,4 +44,13 @@ div#column2 {
     float: left;
     padding-left: 20px;
     width: 150px;
+}
+div#flash {
+    color: darkgreen;
+    height: 10px;
+    padding-bottom: 10px;
+    font: small-caption;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 5px;
 }

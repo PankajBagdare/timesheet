@@ -5,8 +5,13 @@
 	</p>
 	<% if @user.category == "admin" %>
 	<%= link_to "Add Members", user_add_member_path %><br>
-	<%= link_to "Create project", user_create_project_path %><br>
+	<%= link_to "Create project", new_project_path %><br>
 	<% else %>
-	<%= link_to "Create project", user_create_project_path %>
+	<%= link_to "Create project", new_project_path %>
 	<% end %>
+	<div id="flash"><%= flash[:notice] %></div>
+
+<div id="projects">
+	Projects :-
+</div>
 </div>
