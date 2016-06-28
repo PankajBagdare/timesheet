@@ -1,13 +1,19 @@
 <% provide(:title, 'Login') %>
 
 <div class="login" align="center">
-	&nbsp;	
-	<div class="box">
-		<h1>Login</h1>
+	&nbsp;
+  <% if current_user %>
+    <p style="color: brown;"> No login form for already signed in user go to  
+    <%= link_to "Dashboard", user_path(current_user) %>
+    </p>
+  <% else %>
+  <div class="box">
+    
+		<h1 id="login">Login</h1>
 		&nbsp;
 		<div id="table">
 			<%= form_tag :action => :create do %>
-			<div id="row">
+			    <div id="row">
       			<%= label_tag :user, 'Username: ' %></area>
       			<%= text_field_tag :user %><br>
       		</div>
@@ -23,6 +29,7 @@
     		<% end %>
         <p id="notice"><%= flash[:notice] %></p>
  		</div><br>
-    	<p>New user? <%= link_to "Sign up now!", user_new_path %></p>
+   	<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
 	</div>
+  <% end %>
 </div>

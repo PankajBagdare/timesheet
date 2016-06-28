@@ -20,34 +20,15 @@
 		<% end %>		
 	</div>
 </div>
-<div id="left">
-	
-	
-</div>
-<div class="user">
-	<% if current_user %>
-	<p id="name">
 
+<div id="username" >
+	<% if current_user %>
+	<p id="name" style="padding-left:75px; padding-top:25px; float:left">
 	<%= current_user.first_name %>
 	<%= current_user.last_name %>
 	</p>
-	<% if current_user.category == "admin" %>
-	<%= link_to "Add Members", user_add_member_path %><br>
-	<%= link_to "Create project", new_project_path %><br>
-	<% else %>
-	<%= link_to "Create project", new_project_path %>
 	<% end %>
-	<div id="flash"><%= flash[:notice] %></div>
-	<div id="projects">
-		Projects :-
-		<p>
-			<% if current_user.projects %>
-					<%= current_user.projects %><br>
-					<%= current_user.projects %><br>
-			<% end %>
-		</p>
-	</div>
-	<% end %>
+	
 </div>
 <%= yield %>
 

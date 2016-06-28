@@ -4,11 +4,11 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		byebug
 		@project = Project.new(project_permit)
 		if @project.save
 			@project.users << User.find(current_user.id)
-			redirect_to root_url
+			id = current_user.id
+			redirect_to user_path(current_user)
 		else
 			render "new"
 		end

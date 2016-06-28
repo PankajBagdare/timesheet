@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627132337) do
+ActiveRecord::Schema.define(version: 20160628135247) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -59,11 +59,9 @@ ActiveRecord::Schema.define(version: 20160627132337) do
     t.integer  "project_id", limit: 4
     t.time     "start_time"
     t.time     "end_time"
-    t.integer  "day",        limit: 4
-    t.string   "month",      limit: 255
-    t.string   "year",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.date     "date"
   end
 
   add_index "working_times", ["project_id"], name: "fk_rails_c4b1b971f5", using: :btree

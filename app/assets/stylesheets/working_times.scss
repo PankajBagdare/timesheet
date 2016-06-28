@@ -1,6 +1,11 @@
-// Place all the styles related to the Projects controller here.
+// Place all the styles related to the WorkingTimes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div#timesheet {
+    padding-top: 50px;
+    padding-left: 40px;
+    float: left;
+}
 div#column1 {
     float: left;
     width: 100px;
@@ -12,12 +17,6 @@ div#column2 {
     width: 150px;
 }
 div#row {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-div#project{
-	float: left;
-	padding-left: 30px;
-	padding-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

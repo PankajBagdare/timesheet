@@ -29,4 +29,43 @@ div#login{
 div#left {
     width: 150px;
     float: left;
+
+div#create_project{
+    padding-left: 20px;
+    float :right; 
+    padding-top:20px;
 }
+div#project{
+	float: left;
+	padding-left: 40px;
+	padding-top: 50px;
+}
+div#timesheet {
+    padding-top: 50px;
+    padding-left: 40px;
+    float: left;
+}
+div#column1 {
+    float: left;
+    width: 100px;
+    padding-left: 20px;
+}
+div#column2 {
+    float: left;
+    padding-left: 20px;
+    width: 150px;
+}
+div#row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div#username {
+    padding-left: 75px;
+    padding-top: 25px;
+    font-family: serif;
+    width: auto;
+    float: left;
+    font-size: larger;
+}
+

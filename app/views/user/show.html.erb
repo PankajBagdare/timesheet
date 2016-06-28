@@ -1,0 +1,19 @@
+<div class="user">
+<%if current_user %>
+Projects:-
+<p>
+Name: <%= current_user.projects.pluck(:name) %><br>
+Description: <%= current_user.projects.pluck(:description) %>
+</p>
+<% end %>
+	<% if current_user.category == "admin" %>
+	<%= link_to "Add Members", user_add_member_path %><br>
+	<%= link_to "Create project", new_project_path %><br>
+	<%= link_to "Add Timesheet", new_working_time_path %><br>
+	<% else %>
+	<%= link_to "Create project", new_project_path %><br>
+	<%= link_to "Add Timesheet", new_working_time_path %>
+	<% end %>
+	<div id="flash"><%= flash[:notice] %></div>
+
+</div>

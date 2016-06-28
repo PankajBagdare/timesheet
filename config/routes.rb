@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   resources :projects
   resources :sessions
+  resources :working_times
+  resources :user
+
   root 'sessions#index'
-  
-  get '/user/new'  => 'user#new'
-  post '/user/create' => 'user#create'
-  get '/user/:id' => 'user#home'
+
   get '/user/add_member' => 'user#add_member'
-  get '/user/create_project' => 'user#create_project'
+  
   #post '/sessions/user/new'  => 'user#new'
   #get '/sessions/user/new'  => 'user#new'
   # The priority is based upon order of creation: first created -> highest priority.

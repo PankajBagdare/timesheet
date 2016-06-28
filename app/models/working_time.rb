@@ -5,7 +5,6 @@ class WorkingTime < ActiveRecord::Base
 	validates :project_id, uniqueness: true, presence: true
 	validates :start_time, presence: true
 	validates :end_time, presence: true
-	validates :day, presence: true
-	validates :month, presence: true
-	validates :year, presence: true
+	validates :date, presence: true
+
 end
