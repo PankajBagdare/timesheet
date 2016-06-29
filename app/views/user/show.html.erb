@@ -2,6 +2,7 @@
 <%if current_user %>
 Projects:-
 <p>
+Project_id: <%= current_user.projects.pluck(:project_id) %><br>
 Name: <%= current_user.projects.pluck(:name) %><br>
 Description: <%= current_user.projects.pluck(:description) %>
 </p>

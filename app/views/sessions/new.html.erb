@@ -3,7 +3,7 @@
 <div class="login" align="center">
 	&nbsp;
   <% if current_user %>
-    <p style="color: brown;"> No login form for already signed in user go to  
+    <p style="color: brown;"> Go to User's 
     <%= link_to "Dashboard", user_path(current_user) %>
     </p>
   <% else %>

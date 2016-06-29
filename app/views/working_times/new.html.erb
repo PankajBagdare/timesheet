@@ -1,32 +1,31 @@
-<div id="timesheet" style="float: left;">
-
+<div id="timesheet">
 	<div id="form">
-	<%= form_tag action: 'create', method: 'post' do %>
+	<%= form_for @working_time  do |f| %>
 		<div id="row">
-			<div id="column1"><%= label_tag :project_name %></div>
-			<div id="column2"><%= text_field_tag :project_name%></div>
+			<div id="column1"><%= f.label :project_id %></div>
+			<div id="column2"><%= f.text_field :project_id%></div>
 		</div>
 		<div id="row">
-			<div id="column1"><%= label_tag :start_time %></div>
-			<div id="column2"><%= time_select :times, :start_time %> </div>
+			<div id="column1"><%= f.label :start_time %></div>
+			<div id="column2"><%= f.time_select :start_time %> </div>
 		</div>
 		<div id="row">
-			<div id="column1"><%= label_tag :end_time %></div>
-			<div id="column2"><%= time_select :times, :end_time %>   </div>
+			<div id="column1"><%= f.label :end_time %></div>
+			<div id="column2"><%= f.time_select :end_time %>   </div>
 		</div>
 		<div id="row">
-			<div id="column1"><%= label_tag :date %></div>
+			<div id="column1"><%= f.label :date %></div>
 			<div style="float: left;
     					padding-left: 20px;
     					width: 200px;">
-    		<%= date_select :times, :date %></div>	
+    		<%= f.date_select :date %></div>	
+		</div>
+		<div id="row"><%= f.fields_for :tasks do |builder| %>
+    			<%= render "task_fields", :f => builder %>
+  				<% end %>
 		</div>
 		<div id="row">
-			<div id="column1"><%= label_tag :tasks %></div>
-			<div id="column1"><%= text_area_tag :tasks %></div>
-		</div>
-		<div id="row">
-      		<p align="center"><%= submit_tag 'Login' %></p>
+      		<p align="center"><%= submit_tag 'Submit' %></p>
       	</div>
 	<% end %>
 	</div>
