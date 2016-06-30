@@ -1,18 +1,14 @@
 class WorkingTimesController < ApplicationController
+
 	def new
 		@working_time = WorkingTime.new
-		3.times do
-			task = @working_time.tasks.build
-		end
 	end
 
 	def create
 
-		#t = Task.new(task_params)
-		wt = current_user.build_working_time(working_times_params)
-		byebug	
+		wt = current_user.working_times.build(working_times_params)
 		if wt.save
-			redirect_to working_time_path
+			redirect_to new_working_time_task_path(wt)
 		else
 			render "new"
 		end
@@ -29,8 +25,7 @@ class WorkingTimesController < ApplicationController
     :project_id, 
     :start_time,
     :end_time,
-    :date,  
-    tasks_attributes: [:project_id,:date,:description] )
+    :date )
 	end
 
 end

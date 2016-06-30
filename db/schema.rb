@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629105649) do
+ActiveRecord::Schema.define(version: 20160630090744) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -31,17 +31,12 @@ ActiveRecord::Schema.define(version: 20160629105649) do
   add_index "projects_users", ["project_id", "user_id"], name: "index_projects_users_on_project_id_and_user_id", using: :btree
 
   create_table "tasks", force: :cascade do |t|
-    t.integer  "user_id",         limit: 4
-    t.integer  "project_id",      limit: 4
-    t.date     "date"
     t.text     "description",     limit: 65535
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "working_time_id", limit: 4
   end
 
-  add_index "tasks", ["project_id"], name: "fk_rails_02e851e3b7", using: :btree
-  add_index "tasks", ["user_id"], name: "fk_rails_4d2a9e4d7e", using: :btree
   add_index "tasks", ["working_time_id"], name: "fk_rails_46986791fb", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -69,8 +64,6 @@ ActiveRecord::Schema.define(version: 20160629105649) do
   add_index "working_times", ["project_id"], name: "fk_rails_c4b1b971f5", using: :btree
   add_index "working_times", ["user_id"], name: "fk_rails_7d09163123", using: :btree
 
-  add_foreign_key "tasks", "projects"
-  add_foreign_key "tasks", "users"
   add_foreign_key "tasks", "working_times"
   add_foreign_key "working_times", "projects"
   add_foreign_key "working_times", "users"

@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :sessions
   resources :working_times
   resources :user
+  resources :tasks
+
+  resources :working_times do
+    resources :tasks
+  end
 
   root 'sessions#index'
 

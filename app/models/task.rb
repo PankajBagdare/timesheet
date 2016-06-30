@@ -7,4 +7,5 @@ class Task < ActiveRecord::Base
 	validates :working_time_id, presence: true
 	validates :description, presence: true
 
+	accepts_nested_attributes_for :working_time
 end

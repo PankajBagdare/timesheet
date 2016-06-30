@@ -3,25 +3,26 @@ class UserController < ApplicationController
   def new
   	@user = User.new
   end
-
-  def home	
-  	@user =User.find(session[:user_id])
+  def index
+    
+  end
+  def show	
+  	@user = User.find(session[:user_id])
   	#id = session[:user_id]
+    @projects = @user.projects
   end
 
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		redirect_to new_session_path, notice: "Thank you for signing up "
+  		redirect_to new_session_path, notice: "Thank you for signing up. Now log in"
     else
     	render "new"
     end
   end
-  def create_project
-  	
-  end
-  def add_member
-  	
+  
+  def add_members
+    @users = User.all  	
   end
 
   private 

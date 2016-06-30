@@ -1,7 +1,7 @@
-
-	<div id="column1"><%= f.label :tasks, "Task" %></div>
-	<div id="column2">
-		<%= f.text_field :description %>
-		<%= f.check_box :_destroy %>
-  		<%= f.label :_destroy, "Remove" %>
-  	</div>
+<%= f.fields_for :tasks do |builder| %>
+	<%= render "task_fields", :f => builder %>
+<% end %>
+<div id="row">
+    <div id="column1"><%= f.label :tasks %></div>
+	<div id="column2"><%= f.text_area :description %></div>
+</div>

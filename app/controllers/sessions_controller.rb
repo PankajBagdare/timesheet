@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   	@user = User.find_by_user_name(params[:user])
   	if @user && @user.authenticate(params[:password])
   		session[:user_id] = @user.id
-      flash[:notice] = 'Successfully Logged in'
+      #flash[:notice] = 'Successfully Logged in'
   		redirect_to user_path(@user) , notice: 'Successfully Logged in!'
   	else
       flash[:notice] = 'Username or password is incorrect'

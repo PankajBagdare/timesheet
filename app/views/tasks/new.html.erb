@@ -1,0 +1,14 @@
+<div id="timesheet">
+	<div id="form">
+	<%= form_for @task  do |f| %>
+		<div id="row">
+    		<div id="column1"><%= f.label :tasks %></div>
+    		<%= f.hidden_field :working_time_id, :value => params[:working_time_id]%>
+			<div id="column2"><%= f.text_area :description %></div>
+		</div>
+		<div id="row">
+      		<p align="center"><%= submit_tag 'Submit' %></p>
+      	</div>
+	<% end %>
+	</div>
+</div>

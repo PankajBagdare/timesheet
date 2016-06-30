@@ -2,7 +2,7 @@
 	<div id="form">
 	<%= form_for @working_time  do |f| %>
 		<div id="row">
-			<div id="column1"><%= f.label :project_id %></div>
+			<div id="column1"><%= f.label :project_id ,"Project ID"%></div>
 			<div id="column2"><%= f.text_field :project_id%></div>
 		</div>
 		<div id="row">
@@ -19,10 +19,6 @@
     					padding-left: 20px;
     					width: 200px;">
     		<%= f.date_select :date %></div>	
-		</div>
-		<div id="row"><%= f.fields_for :tasks do |builder| %>
-    			<%= render "task_fields", :f => builder %>
-  				<% end %>
 		</div>
 		<div id="row">
       		<p align="center"><%= submit_tag 'Submit' %></p>
