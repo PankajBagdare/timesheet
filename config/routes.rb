@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :projects
   resources :sessions
   resources :working_times
-  resources :user
+  resources :user do
+    collection do
+      post :add_member
+    end
+  end
   resources :tasks
 
   resources :working_times do
@@ -11,7 +15,6 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  get '/user/add_member' => 'user#add_member'
   
   #post '/sessions/user/new'  => 'user#new'
   #get '/sessions/user/new'  => 'user#new'

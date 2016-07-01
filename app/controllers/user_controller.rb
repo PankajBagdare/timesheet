@@ -3,12 +3,14 @@ class UserController < ApplicationController
   def new
   	@user = User.new
   end
+
   def index
-    
+    @projects= Project.all
+    @users = User.all
   end
+
   def show	
   	@user = User.find(session[:user_id])
-  	#id = session[:user_id]
     @projects = @user.projects
   end
 
@@ -21,8 +23,12 @@ class UserController < ApplicationController
     end
   end
   
-  def add_members
-    @users = User.all  	
+  def add_member
+    
+    project = Project.find_by_name(params[:project_name])
+    project.users << User.find(params[:user_id])
+    render "show"
+    
   end
 
   private 

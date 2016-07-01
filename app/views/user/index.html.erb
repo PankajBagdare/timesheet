@@ -1,0 +1,19 @@
+<div>
+	<div class="add_user" style="float:left">
+		<%= form_tag :action => :add_member do %>
+			<div id="row">
+			<div id="column1"><%= label_tag :Project_name %></div>
+			<div id="column2"><%= select_tag :project_name, options_for_select(@projects.collect {|project| project.name }) %></div>		
+			</div>
+			<div id="row">
+				<div id="column1"><%= label_tag :add_member %></div>
+				<div id="column2">
+					<%= select_tag :user_id,options_for_select(@users.collect{ |u| [u.first_name, u.last_name, u.id] }), multiple: true %></div>
+			</div><br>
+			
+				<p align="center" style="margin-top:20px; padding-top:20px;"><%= submit_tag :submit %></p>
+			
+		<% end %>		
+	</div>
+</div>
+
