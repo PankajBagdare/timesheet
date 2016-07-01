@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :projects
   resources :sessions
   resources :working_times
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
       post :add_member
     end
   end
+
   resources :tasks
 
   resources :working_times do
