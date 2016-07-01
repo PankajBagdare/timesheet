@@ -29,6 +29,7 @@ div#login{
 div#left {
     width: 150px;
     float: left;
+}
 
 div#create_project{
     padding-left: 20px;
