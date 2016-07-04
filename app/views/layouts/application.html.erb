@@ -16,10 +16,9 @@
 		<div id="links">
 			<%= link_to "Home", user_path(current_user) %>
 			<%= link_to "Log Out", session_path(current_user), method: "delete" %>
-		<% else  %>
+		<% else %>
 			<%= link_to "Login", new_session_path %>
 		<% end %>	
-	
 		</div>	
 	</div>
 </div>
