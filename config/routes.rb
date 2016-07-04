@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :user do
     collection do
       post :add_member
+      get :show_timesheet
     end
   end
 

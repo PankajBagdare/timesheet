@@ -31,6 +31,10 @@ class UserController < ApplicationController
 
   end
 
+  def show_timesheet
+    
+  end
+
   private 
 
   def user_params

@@ -1,0 +1,12 @@
+<div id="show_timesheet">
+	<%= form_tag controller: :tasks, action: :show, method: :post do %>
+	<div id="row">
+		<div id="column1"><%= label_tag :select_date_from %></div>
+		<div><%= date_select :date_from, :date_from%></div>
+	</div>
+	<div id="row">
+		<div id="column1"><%= label_tag :select_date_to %></div>
+		<div><%= date_select :date_to, :date_to %></div>
+	</div>
+	<% end %>
+</div>

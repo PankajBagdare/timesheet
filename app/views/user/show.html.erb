@@ -17,8 +17,8 @@
 		<%= link_to "Create project", new_project_path %><br>
 		<%= link_to "Add Timesheet", new_working_time_path %><br>
 	<% else %>
-		<%= link_to "Add Timesheet", new_working_time_path %>
+		<%= link_to "Add Timesheet", new_working_time_path %><br>
 	<% end %>
-	<div id="flash"><%= flash[:notice] %></div>
+	<div id= "flash"><%= flash[:notice] %></div>
 
 </div>
