@@ -9,27 +9,24 @@
 </head>
 <body>
 <div class="header">
-	<div style="padding-top:2px; padding-left:5px;"><h3>Home</h3></div>
 	&nbsp;<h1 align="center">Timesheet</h1>&nbsp;
-	<div id="login">
+	<div id="nav">
 		<% if current_user %>
 			Welcome! <%= current_user.first_name %> <%= current_user.last_name%>
+		<div id="links">
+			<%= link_to "Home", user_path(current_user) %>
 			<%= link_to "Log Out", session_path(current_user), method: "delete" %>
 		<% else  %>
 			<%= link_to "Login", new_session_path %>
-		<% end %>		
+		<% end %>	
+	
+		</div>	
 	</div>
 </div>
-
-<div id="username" >
-	<% if current_user %>
-	<p id="name" style="padding-left:75px; padding-top:25px; float:left">
-	<%= current_user.first_name %>
-	<%= current_user.last_name %>
-	</p>
-	<% end %>
+<div id="menu" style="float:left;">
 	
 </div>
+
 <%= yield %>
 
 

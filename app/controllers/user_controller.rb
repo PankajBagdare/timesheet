@@ -27,8 +27,8 @@ class UserController < ApplicationController
     
     project = Project.find_by_name(params[:project_name])
     project.users << User.find(params[:user_id])
-    render "show"
-    
+    render :show
+
   end
 
   private 

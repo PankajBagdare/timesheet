@@ -2,7 +2,7 @@
 <div class="user">
 	<%if current_user %>
 	&nbsp;
-	Projects:-
+	<h3>Projects:-</h3>
 		<% @projects.each do |project| %>
 			<p>
 				Project_id: <%= project.id %><br>
@@ -17,7 +17,6 @@
 		<%= link_to "Create project", new_project_path %><br>
 		<%= link_to "Add Timesheet", new_working_time_path %><br>
 	<% else %>
-		<%= link_to "Create project", new_project_path %><br>
 		<%= link_to "Add Timesheet", new_working_time_path %>
 	<% end %>
 	<div id="flash"><%= flash[:notice] %></div>

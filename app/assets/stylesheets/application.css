@@ -21,7 +21,6 @@
     font-size: large;
 }
 div#login{
-    
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -35,30 +34,25 @@ div#create_project{
     padding-left: 20px;
     float :right; 
     padding-top:20px;
-}
-div#project{
-	float: left;
-	padding-left: 40px;
-	padding-top: 50px;
+    align-self: center;
 }
 div#timesheet {
     padding: 30px;
-    float: left;
     margin: 30px;
 }
 div#column1 {
-    float: left;
-    width: 100px;
-    padding-left: 20px;
+    width: 175px;
+    padding-left: 30px;
 }
 div#column2 {
-    float: left;
-    padding-left: 20px;
-    width: 150px;
+    padding-left: 30px;
+    width: 175px;
 }
 div#row {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
 div#username {
@@ -69,4 +63,11 @@ div#username {
     float: left;
     font-size: larger;
 }
-
+div#nav {
+    height: 40px;
+}
+div#links {
+    float: right;
+    padding-right: 15px;
+    margin right: 10px;
+}

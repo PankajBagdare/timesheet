@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-  root 'sessions#index'
+  root 'sessions#new'
 
   
   #post '/sessions/user/new'  => 'user#new'

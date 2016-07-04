@@ -1,31 +1,27 @@
-<div id="project" style="">
-	<div id="box" >
-		<div id="create_project">
-			<%= form_for @project do |f| %>	
-				<div id="row">
-					<div id="column1"><%= f.label :project_name %></div>
-					<div id="column2"><%= f.text_field :name %></div>
-				</div>
-				<div id="row">
-					<div id="column1"><%= f.label :description %></div>
-					<div id="column2"><%= f.text_area :description %></div>
-				</div>
-				<div id="row">
-					<div id="column1"><%= f.label :start_date %></div>
-					<div style="float: left;
+<div id="project">
+	<%= form_for @project do |f| %>	
+		<div id="row">
+			<div id="column1"><%= f.label :project_name %></div>
+			<div id="column2"><%= f.text_field :name %></div>
+		</div>
+		<div id="row">
+			<div id="column1"><%= f.label :description %></div>
+			<div id="column2"><%= f.text_area :description %></div>
+		</div>
+		<div id="row">
+			<div id="column1"><%= f.label :start_date %></div>
+			<div style="float: left;
     					padding-left: 20px;
     					width: 200px;">
     					<%= f.date_select :start_date %></div>
-    			</div>
-				<div id="row">
-					<div id="column1"><%= f.label :project_status %></div>
-					<div id="column2"><%= f.select :project_status, [ 'Biginning', 'In-progress', 'Completed'], :prompt => 'Select One' %>
-					</div>
-				</div>
-				<div id="row">
-					<div><center><%= f.submit :submit %></center></div>
-				</div>
-			<% end %>
+  	</div>
+		<div id="row">
+			<div id="column1"><%= f.label :project_status %></div>
+			<div id="column2"><%= f.select :project_status, [ 'Biginning', 'In-progress', 'Completed'], :prompt => 'Select One' %>
+			</div>
 		</div>
+		<div id="row">
+				<div style="padding-left:150px;"><%= f.submit :submit %></div>
+		</div>
+	<% end %>
 	</div>
-</div>

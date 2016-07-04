@@ -3,7 +3,7 @@
 	<%= form_for @working_time  do |f| %>
 		<div id="row">
 			<div id="column1"><%= f.label :project_id ,"Project ID"%></div>
-			<div id="column2"><%= f.text_field :project_id%></div>
+			<div id="column2"><%= f.select :project_id, options_for_select( @projects.collect {|p| [p.name, p.id] })%></div>
 		</div>
 		<div id="row">
 			<div id="column1"><%= f.label :start_time %></div>
@@ -21,8 +21,8 @@
     		<%= f.date_select :date %></div>	
 		</div>
 		<div id="row">
-      		<p align="center"><%= submit_tag 'Submit' %></p>
-      	</div>
+      <div style="padding-left:150px;"><%= submit_tag 'Submit' %></div>
+    </div>
 	<% end %>
 	</div>
 </div>

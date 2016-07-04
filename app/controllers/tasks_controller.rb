@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 		wt = WorkingTime.find(params[:task][:working_time_id])
 		task = wt.tasks.new(task_params)
 		if task.save
-			redirect_to root_url, notice: "Sucessfully updated"
+			redirect_to user_path(current_user), notice: "Sucessfully updated"
 		else
 			render "new"
 		end

@@ -2,6 +2,7 @@ class WorkingTimesController < ApplicationController
 
 	def new
 		@working_time = WorkingTime.new
+		@projects = current_user.projects
 	end
 
 	def create
@@ -22,10 +23,11 @@ class WorkingTimesController < ApplicationController
 	private 
 	def working_times_params
 		params.require(:working_time).permit(
-    :project_id, 
-    :start_time,
-    :end_time,
-    :date )
+	    :project_id, 
+	    :start_time,
+	    :end_time,
+	    :date 
+    )
 	end
 
 end

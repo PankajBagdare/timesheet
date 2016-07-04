@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	#has_secure_password
+	before_save { self.email = email.downcase }
 	has_and_belongs_to_many :projects
 	has_many :tasks
 	has_many :working_times
@@ -13,4 +14,5 @@ class User < ActiveRecord::Base
 	def authenticate(pass)
   		pass == self.password
   	end
+  	
 end

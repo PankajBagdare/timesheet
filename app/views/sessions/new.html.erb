@@ -13,20 +13,20 @@
 		&nbsp;
 		<div id="table">
 			<%= form_tag :action => :create do %>
-			    <div id="row">
-      			<%= label_tag :user, 'Username: ' %></area>
-      			<%= text_field_tag :user %><br>
-      		</div>
+		   <div id="row">
+     			<div id="column1"><%= label_tag :user, 'Username: ' %></div>
+     			<div id="column2"><%= text_field_tag :user %></div>
+     		</div>
       
-      		<div id="row">
-      			<%= label_tag :password, 'Password: ' %></area>
-      			<%= password_field_tag :password %><br>
-      		</div>
+   	  	<div id="row">
+   		  	<div id="column1"><%= label_tag :password,'Password:'%></div>
+   		   	<div id="column2"><%= password_field_tag :password %></div>
+        </div>
       
-    		<div id="row">
-      			<%= submit_tag 'Login' %>
-      		</div>
-    		<% end %>
+   	  	<div id="row">
+   		   	<%= submit_tag 'Login' %>
+   	  	</div>
+   		<% end %>
         <p id="notice"><%= flash[:notice] %></p>
  		</div><br>
    	<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
