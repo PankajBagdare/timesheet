@@ -8,24 +8,25 @@
     </p>
   <% else %>
   <div class="box">
-    
-		<h1 id="login">Login</h1>
-		&nbsp;
-		<div id="table">
-			<%= form_tag :action => :create do %>
-		   <div id="row">
-     			<div id="column1"><%= label_tag :user, 'Username: ' %></div>
-     			<div id="column2"><%= text_field_tag :user %></div>
-     		</div>
-      
-   	  	<div id="row">
-   		  	<div id="column1"><%= label_tag :password,'Password:'%></div>
-   		   	<div id="column2"><%= password_field_tag :password %></div>
-        </div>
-      
-   	  	<div id="row">
-   		   	<%= submit_tag 'Login' %>
-   	  	</div>
+	<h1 id="login">Login</h1>
+	   &nbsp;
+	<div id="table">
+		<%= simple_form_for :session, :action => :create, html:{ class:"form" } do |f| %>
+		    <div class="form-body">
+		        <div class="form-group">
+         			<%= f.label :user, 'Username: ' %>
+         			<%= f.text_field :user,class:'form-control' %>
+         		</div>
+          
+       	     	<div class="form-group">
+       	    	  	<%= f.label :password,'Password:'%>
+       	    	   	<%= f.password_field :password, class:'form-control' %>
+                </div>
+          
+       	     	<div id="row">
+       	    	   	<%= submit_tag 'Login' ,class:"btn btn-primary"%>
+       	     	</div>
+       	     </div>
    		<% end %>
         <p id="notice"><%= flash[:notice] %></p>
  		</div><br>

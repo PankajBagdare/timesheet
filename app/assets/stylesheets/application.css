@@ -11,9 +11,13 @@
  * file per style scope.
  *
  *= require bootstrap-datepicker
+ *= require bootstrap
+ *= require bootstrap-theme
  *= require_tree .
  *= require_self
  */
+ 
+ @import bootstrap
 
 .header {
     color: mintcream;
