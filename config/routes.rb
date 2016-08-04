@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
+  post "session/new" => "sessions#create"
   
   #post '/sessions/user/new'  => 'user#new'
   #get '/sessions/user/new'  => 'user#new'

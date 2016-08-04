@@ -9,18 +9,19 @@
 </head>
 <body>
 <div class="header">
-	&nbsp;<h1 align="center">Timesheet</h1>&nbsp;
-	<div id="nav">
-		<% if current_user %>
-			Welcome! <%= current_user.first_name %> <%= current_user.last_name%>
-		<div id="links">
-			<%= link_to "Home", user_path(current_user) %>
-			<%= link_to "Log Out", session_path(current_user), method: "delete" %>
-		<% else %>
-			<%= link_to "Login", new_session_path %>
-		<% end %>	
-		</div>	
-	</div>
+	&nbsp;<h1 align="center">Timesheet</h1>
+    <nav class="nav">
+      <div>
+        <ul class="nav navbar-nav">
+    		<% if current_user %>
+    			<li><%= link_to "Home", user_path(current_user) %></li>
+    			<li><%= link_to "Log Out", session_path(current_user), method: "delete" %></li>
+    		<% else %>
+    			<li><%= link_to "Login", new_session_path %></li>
+    		<% end %>	
+        </ul>	
+  	  </div>
+    </nav>
 </div>
 <div id="menu" style="float:left;">
 	

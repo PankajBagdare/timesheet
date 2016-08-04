@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
 	validates :category, inclusion: { in: ["admin", "normal"] }
 
 	def authenticate(pass)
-  		pass == self.password
-  	end
+  	pass == self.password
+  end
+
+  def name
+  	[first_name ,last_name].join(" ")
+  end
   	
 end

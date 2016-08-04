@@ -11,7 +11,7 @@
 	<h1 id="login">Login</h1>
 	   &nbsp;
 	<div id="table">
-		<%= simple_form_for :session, :action => :create, html:{ class:"form" } do |f| %>
+		<%= simple_form_for :session, :url => session_new_path, html:{ class:"form" } do |f| %>
 		    <div class="form-body">
 		        <div class="form-group">
          			<%= f.label :user, 'Username: ' %>

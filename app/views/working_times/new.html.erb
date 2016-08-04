@@ -1,6 +1,6 @@
 <div id="timesheet">
 	<div id="form">
-	<%= form_for @working_time  do |f| %>
+	<%= form_for @working_time , class: 'form' do |f| %>
 		<div id="row">
 			<div id="column1"><%= f.label :project_id ,"Project ID"%></div>
 			<div id="column2"><%= f.select :project_id, options_for_select( @projects.collect {|p| [p.name, p.id] })%></div>
@@ -17,11 +17,11 @@
 			<div id="column1"><%= f.label :date %></div>
 			<div style="float: left;
     					padding-left: 20px;
-    					width: 200px;">
+    					width: 250px;">
     		<%= f.date_select :date %></div>	
 		</div>
 		<div id="row">
-      <div style="padding-left:150px;"><%= submit_tag 'Submit' %></div>
+      <div style="padding-left:150px;"><%= submit_tag 'Submit' ,class:"btn btn-primary"%></div>
     </div>
 	<% end %>
 	</div>

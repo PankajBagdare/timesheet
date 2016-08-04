@@ -17,6 +17,11 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap'
+gem 'bootstrap-sass'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

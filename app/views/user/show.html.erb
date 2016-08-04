@@ -1,4 +1,4 @@
-
+<%= render '/user/nav' %>
 <div class="user">
 	<%if current_user %>
 	&nbsp;
@@ -10,14 +10,6 @@
 				Description: <%= project.description %>
 			</p>
 		<% end %>	
-	<% end %>
-	
-	<% if current_user.category == "admin" %>
-		<%= link_to "Add Members", user_index_path %><br>
-		<%= link_to "Create project", new_project_path %><br>
-		<%= link_to "Add Timesheet", new_working_time_path %><br>
-	<% else %>
-		<%= link_to "Add Timesheet", new_working_time_path %><br>
 	<% end %>
 	<div id= "flash"><%= flash[:notice] %></div>
 

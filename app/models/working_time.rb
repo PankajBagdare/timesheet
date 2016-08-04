@@ -9,6 +9,6 @@ class WorkingTime < ActiveRecord::Base
 	validates :end_time, presence: true
 	validates :date, presence: true
 
-	accepts_nested_attributes_for :tasks, #:reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
+	accepts_nested_attributes_for :tasks, :reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
 
 end

@@ -13,11 +13,12 @@
  *= require bootstrap-datepicker
  *= require bootstrap
  *= require bootstrap-theme
- *= require_tree .
+ *= require_tree 
  *= require_self
- */
+ */ 
  
  @import bootstrap
+ @import bootstrap-theme
 
 .header {
     color: mintcream;
@@ -38,7 +39,6 @@ div#create_project{
     padding-left: 20px;
     float :right; 
     padding-top:20px;
-    align-self: center;
 }
 div#timesheet {
     padding: 30px;
